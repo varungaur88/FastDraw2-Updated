@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TouchDraw</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">Main Activity</string>
+    <string name="edit_label">Edit</string>
+    <string name="send_label">Send data</string>
+    <string name="delete_label">Delete</string>
+    <string name="action_new_drawing">New Drawing</string>
+    <string name="action_save_drawing">Save Drawing</string>
+    <string name="action_discard_drawing">Discard Drawing</string>
+    <string name="action_send_drawing">Send Drawing</string>
+    <string name="action_clear">Clear</string>
+    <string name="delete">Delete</string>
+
+</resources>
