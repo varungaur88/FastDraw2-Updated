@@ -80,7 +80,16 @@ public class DrawingToolFastTapMenu extends FastTapMenu {
             this.colorItemSelected = ToolItem.Cyan;
         } else if (this.colorSelected == 0xffff00ff) {
             this.colorItemSelected = ToolItem.Magenta;
-        } else {
+        } else if (this.colorSelected == 0xffff4f00) {
+            this.colorItemSelected = ToolItem.Orange;
+        } else if (this.colorSelected == 0xff964b00) {
+            this.colorItemSelected = ToolItem.Brown;
+        } else if (this.colorSelected == 0xff563c5c) {
+            this.colorItemSelected = ToolItem.Voilet;
+        } else if (this.colorSelected == 0xff808080) {
+            this.colorItemSelected = ToolItem.Gray;
+        }
+        else {
             this.colorItemSelected = ToolItem.CustomColor;
         }
     }
@@ -133,7 +142,20 @@ public class DrawingToolFastTapMenu extends FastTapMenu {
                 this.colorSelected = 0xff00ffff;
             } else if (ti == ToolItem.Magenta) {
                 this.colorSelected = 0xffff00ff;
-            } else if (ti == ToolItem.CustomColor) {
+            }
+            else if (ti == ToolItem.Orange) {
+                this.colorSelected = 0xffff4f00;
+            }
+            else if (ti == ToolItem.Brown) {
+                this.colorSelected = 0xff964b00;
+            }
+            else if (ti == ToolItem.Voilet) {
+                this.colorSelected = 0xff563c5c;
+            }
+            else if (ti == ToolItem.Gray) {
+                this.colorSelected = 0xff808080;
+            }
+            else if (ti == ToolItem.CustomColor) {
                 this.colorSelected = 0xff000000;
             } else {
                 this.colorSelected = 0xff000000;

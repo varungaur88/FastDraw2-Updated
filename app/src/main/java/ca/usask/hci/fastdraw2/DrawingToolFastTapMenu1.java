@@ -116,9 +116,12 @@ public class DrawingToolFastTapMenu1 extends FastTapMenu {
             } else if (ti == ToolItem.CustomColor) {
                 this.toolSelected = new CustomColorTool(this.drawingLayer);
             }
+            else if (ti == ToolItem.Triangle) {
+                this.toolSelected = new TriangleTool(this.drawingLayer);
+            }
             //Log.d("Tool Selected_2",this.toolItemSelected.name);
-            Log.d("Tools_","4");
-            Log.d("Tools_",this.toolSelected.getName());
+            //Log.d("Tools_","4");
+            //Log.d("Tools_",this.toolSelected.getName());
         }
         /*Commented by Varun
         else if (Arrays.asList(ToolItem.colorTypes).contains(ti) ) {

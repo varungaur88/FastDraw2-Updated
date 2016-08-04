@@ -15,6 +15,7 @@ public class ToolItem {
 	public static final ToolItem Circle = new ToolItem("Circle", R.drawable.circle);
 	public static final ToolItem Rectangle = new ToolItem("Rectangle", R.drawable.rectangle);
 	public static final ToolItem Fill = new ToolItem("Fill", R.drawable.fill);
+	public static final ToolItem Triangle = new ToolItem("Triangle", R.drawable.triangle);
 	
 	public static final ToolItem Black = new ToolItem("Black", R.drawable.black);
 	public static final ToolItem Red = new ToolItem("Red", R.drawable.red);
@@ -26,6 +27,10 @@ public class ToolItem {
 	public static final ToolItem Yellow = new ToolItem("Yellow", R.drawable.yellow);
 	public static final ToolItem Cyan = new ToolItem("Cyan", R.drawable.cyan);
 	public static final ToolItem Magenta = new ToolItem("Magenta", R.drawable.magenta);
+	public static final ToolItem Orange = new ToolItem("Orange", R.drawable.orange);
+	public static final ToolItem Brown = new ToolItem("Brown", R.drawable.brown);
+	public static final ToolItem Voilet = new ToolItem("Voilet", R.drawable.voilet);
+	public static final ToolItem Gray = new ToolItem("Gray", R.drawable.gray);
 	public static final ToolItem CustomColor = new ToolItem("Custom Color", R.drawable.customcolor);
 		
 	public static final ToolItem Fine = new ToolItem("Fine", R.drawable.fine);
@@ -38,6 +43,7 @@ public class ToolItem {
 	public static final ToolItem Save = new ToolItem("Save", R.drawable.save);
 	public static final ToolItem Clear = new ToolItem("Clear", R.drawable.clear);
 	public static final ToolItem Options = new ToolItem("Options", R.drawable.options);
+	public static final ToolItem Image1 = new ToolItem("Image1", R.drawable.triangle);
 	
 	/*Commented by Varun public static ToolItem[] all = {Paintbrush,
 									Line,
@@ -56,21 +62,21 @@ public class ToolItem {
 			Red,
 			Green,
 			Blue,
-			Black,
 			White,
 			Yellow,
 			Cyan,
 			Magenta,
-			Black,
-			Red,
-			Green};
+			Orange,
+			Brown,
+			Voilet,
+			Gray};
 	public static ToolItem[] all1 = {Paintbrush,
 			Line,
 			Circle,
+			Rectangle,
 			Fill,
-			Undo,
-			Paintbrush,
-			Line,
+			Rectangle,
+			Triangle,
 			Fill,
 			Undo,
 			Paintbrush,
@@ -78,7 +84,7 @@ public class ToolItem {
 			Circle};
 	public static ToolItem[] all2 = {Fine,
 			Thin,
-			Fine,
+			Wide,
 			Medium,
 			Thin,
 			Medium,
@@ -87,14 +93,15 @@ public class ToolItem {
 			Thin,
 			Fine,
 			Medium,
-			Thin};
+			Image1};
 	/*End*/
 	public static ToolItem numberToAll[][] = {all,all1,all2};
 
 	public static ToolItem[] strokeTypes = {Fine,
             Thin,
             Medium,
-            Wide};
+            Wide,
+			Image1};
 
     public static ToolItem[] toolTypes = {Paintbrush,
             Line,
@@ -102,7 +109,8 @@ public class ToolItem {
             Rectangle,
             Fill,
             ColorPicker,
-            CustomColor};
+            CustomColor,
+			Triangle};
 
     public static ToolItem[] colorTypes = {Black,
             Red,
@@ -111,7 +119,11 @@ public class ToolItem {
             White,
             Yellow,
             Cyan,
-            Magenta};
+            Magenta,
+			Orange,
+			Brown,
+			Voilet,
+			Gray};
 
     public static ToolItem[] actionTypes = {Undo};
 

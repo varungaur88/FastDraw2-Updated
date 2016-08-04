@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 
 import java.util.Arrays;
+
 /*Class reserved for Tab1-Strokes*/
 public class DrawingToolFastTapMenu2 extends FastTapMenu {
     /*Commented by Varun
@@ -14,25 +15,28 @@ public class DrawingToolFastTapMenu2 extends FastTapMenu {
     /*Commented by Varun
     private Tool toolSelected;
     private int colorSelected;*/
+    private String flag;
     private float strokeSelected;
+    private Tool toolSelected;
 
-	public DrawingToolFastTapMenu2(Context context, DrawingView drawingView, DrawingLayer drawingLayer) {
-		super(context, drawingView, drawingLayer);
-		this.cols = 4;
-		this.rows = 4;
-		this.menuButton = new MenuButton(this);
-		this.menuItems = new MenuItem[ToolItem.all2.length+3];
-		int i = 0;
-		for (ToolItem ti : ToolItem.all2) {
-			menuItems[i] = new SimpleMenuItem(ti.name, ti.name, ti.icon); // use name as ID
-			i += 1;
-		}
+
+    public DrawingToolFastTapMenu2(Context context, DrawingView drawingView, DrawingLayer drawingLayer) {
+        super(context, drawingView, drawingLayer);
+        this.cols = 4;
+        this.rows = 4;
+        this.menuButton = new MenuButton(this);
+        this.menuItems = new MenuItem[ToolItem.all2.length + 3];
+        int i = 0;
+        for (ToolItem ti : ToolItem.all2) {
+            menuItems[i] = new SimpleMenuItem(ti.name, ti.name, ti.icon); // use name as ID
+            i += 1;
+        }
         menuItems[12] = null;
         menuItems[13] = null;
         menuItems[14] = this.menuButton;
 
         resetSelections();
-	}
+    }
     /*Commented by Varun
     public ToolItem getToolItemSelected() {
         return toolItemSelected;
@@ -82,7 +86,7 @@ public class DrawingToolFastTapMenu2 extends FastTapMenu {
     }*/
 
     protected void selectItem(MenuItem mi) {
-        ToolItem ti = ToolItem.getByName(mi.id,2);
+        ToolItem ti = ToolItem.getByName(mi.id, 2);
         selectByToolItem(ti);
         // Call super method after b/c it sends out a notification
         super.selectItem(mi);
@@ -135,7 +139,7 @@ public class DrawingToolFastTapMenu2 extends FastTapMenu {
             }
 
         } else*/
-        if (Arrays.asList(ToolItem.strokeTypes).contains(ti) ) {
+        if (Arrays.asList(ToolItem.strokeTypes).contains(ti)) {
             this.strokeItemSelected = ti;
 
             if (ti == ToolItem.Fine) {
@@ -182,9 +186,9 @@ public class DrawingToolFastTapMenu2 extends FastTapMenu {
             /*Commented by Varun
             canvas.drawText(menu.getToolItemSelected().name, x + width/2f, y + height/4f, mLabelPaint);
             canvas.drawText(menu.getColorItemSelected().name, x + width/2f, y + 2*height/4f, mLabelPaint);*/
-            canvas.drawText(menu.getStrokeItemSelected().name, x + width/2f, y + 2*height/4f, mLabelPaint);
+            canvas.drawText(menu.getStrokeItemSelected().name, x + width / 2f, y + 2 * height / 4f, mLabelPaint);
         }
 
     }
-	
+
 }
