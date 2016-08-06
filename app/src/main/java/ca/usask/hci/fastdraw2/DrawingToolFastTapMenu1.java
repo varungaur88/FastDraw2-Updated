@@ -134,6 +134,9 @@ public class DrawingToolFastTapMenu1 extends FastTapMenu {
             else if (ti == ToolItem.Oval) {
                 this.toolSelected = new OvalTool(this.drawingLayer);
             }
+            else if (ti == ToolItem.Heart) {
+                this.toolSelected = new HeartTool(this.drawingLayer);
+            }
             //Log.d("Tool Selected_2",this.toolItemSelected.name);
             //Log.d("Tools_","4");
             //Log.d("Tools_",this.toolSelected.getName());
@@ -185,7 +188,7 @@ public class DrawingToolFastTapMenu1 extends FastTapMenu {
     public void resetSelections() {
         //Log.d("Tool Selected_6","hi");
         Log.d("Tools_","2");
-        this.selectByToolItem(ToolItem.Circle);
+        this.selectByToolItem(ToolItem.Paintbrush);
         /*Commented by Varun
         this.selectByToolItem(ToolItem.Black);
         this.selectByToolItem(ToolItem.Thin);*/

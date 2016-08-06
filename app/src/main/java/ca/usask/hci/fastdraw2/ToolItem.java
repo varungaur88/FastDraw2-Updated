@@ -21,6 +21,7 @@ public class ToolItem {
 	public static final ToolItem Diamond = new ToolItem("Diamond", R.drawable.diamond);
 	public static final ToolItem Hexagon = new ToolItem("Hexagon", R.drawable.hexagon);
 	public static final ToolItem Oval = new ToolItem("Oval", R.drawable.oval);
+	public static final ToolItem Heart = new ToolItem("Heart", R.drawable.heart);
 	
 	public static final ToolItem Black = new ToolItem("Black", R.drawable.black);
 	public static final ToolItem Red = new ToolItem("Red", R.drawable.red);
@@ -83,7 +84,7 @@ public class ToolItem {
 			Pentagon,
 			Triangle,
 			Star,
-			Undo,
+			Heart,
 			Diamond,
 			Hexagon,
 			Oval};
@@ -98,7 +99,7 @@ public class ToolItem {
 			Thin,
 			Fine,
 			Medium,
-			Image1};
+			Undo};
 	/*End*/
 	public static ToolItem numberToAll[][] = {all,all1,all2};
 
@@ -118,6 +119,7 @@ public class ToolItem {
 			Triangle,
 			Pentagon,
 			Star,
+			Heart,
 			Diamond,
 			Hexagon,
 			Oval};
