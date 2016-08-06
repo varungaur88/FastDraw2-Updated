@@ -90,15 +90,15 @@ public class ToolItem {
 			Oval};
 	public static ToolItem[] all2 = {Fine,
 			Thin,
+			Medium,
 			Wide,
 			Medium,
-			Thin,
-			Medium,
 			Fine,
 			Medium,
 			Thin,
 			Fine,
 			Medium,
+			Wide,
 			Undo};
 	/*End*/
 	public static ToolItem numberToAll[][] = {all,all1,all2};
