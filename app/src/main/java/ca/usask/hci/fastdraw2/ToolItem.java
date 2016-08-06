@@ -16,6 +16,11 @@ public class ToolItem {
 	public static final ToolItem Rectangle = new ToolItem("Rectangle", R.drawable.rectangle);
 	public static final ToolItem Fill = new ToolItem("Fill", R.drawable.fill);
 	public static final ToolItem Triangle = new ToolItem("Triangle", R.drawable.triangle);
+	public static final ToolItem Pentagon = new ToolItem("Pentagon", R.drawable.pentagon);
+	public static final ToolItem Star = new ToolItem("Star", R.drawable.star);
+	public static final ToolItem Diamond = new ToolItem("Diamond", R.drawable.diamond);
+	public static final ToolItem Hexagon = new ToolItem("Hexagon", R.drawable.hexagon);
+	public static final ToolItem Oval = new ToolItem("Oval", R.drawable.oval);
 	
 	public static final ToolItem Black = new ToolItem("Black", R.drawable.black);
 	public static final ToolItem Red = new ToolItem("Red", R.drawable.red);
@@ -75,13 +80,13 @@ public class ToolItem {
 			Circle,
 			Rectangle,
 			Fill,
-			Rectangle,
+			Pentagon,
 			Triangle,
-			Fill,
+			Star,
 			Undo,
-			Paintbrush,
-			Line,
-			Circle};
+			Diamond,
+			Hexagon,
+			Oval};
 	public static ToolItem[] all2 = {Fine,
 			Thin,
 			Wide,
@@ -110,7 +115,12 @@ public class ToolItem {
             Fill,
             ColorPicker,
             CustomColor,
-			Triangle};
+			Triangle,
+			Pentagon,
+			Star,
+			Diamond,
+			Hexagon,
+			Oval};
 
     public static ToolItem[] colorTypes = {Black,
             Red,

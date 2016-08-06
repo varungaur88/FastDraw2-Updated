@@ -8,13 +8,13 @@ import android.util.Log;
 
 import java.util.Arrays;
 
-public class CircleTool extends Tool {
+public class OvalTool extends Tool {
 
     Paint paint;
 
-    public CircleTool(DrawingLayer drawingLayer) {
+    public OvalTool(DrawingLayer drawingLayer) {
         super(drawingLayer);
-        this.name = "Circle";
+        this.name = "Oval";
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setDither(true);
@@ -33,6 +33,6 @@ public class CircleTool extends Tool {
         cx = (start.x + end.x)/2;
         cy = (start.y + end.y)/2;
         r = GeometryUtils.dist(start.x, start.y, cx, cy);
-        canvas.drawCircle(cx, cy, r, paint);
+        canvas.drawOval(start.x-r,start.y-r/2,start.x+r,start.y+r/2,paint);
     }
 }

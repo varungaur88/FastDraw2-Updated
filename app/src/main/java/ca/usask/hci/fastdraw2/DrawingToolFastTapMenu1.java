@@ -119,6 +119,21 @@ public class DrawingToolFastTapMenu1 extends FastTapMenu {
             else if (ti == ToolItem.Triangle) {
                 this.toolSelected = new TriangleTool(this.drawingLayer);
             }
+            else if (ti == ToolItem.Pentagon) {
+                this.toolSelected = new PentagonTool(this.drawingLayer);
+            }
+            else if (ti == ToolItem.Star) {
+                this.toolSelected = new StarTool(this.drawingLayer);
+            }
+            else if (ti == ToolItem.Diamond) {
+                this.toolSelected = new DiamondTool(this.drawingLayer);
+            }
+            else if (ti == ToolItem.Hexagon) {
+                this.toolSelected = new HexagonTool(this.drawingLayer);
+            }
+            else if (ti == ToolItem.Oval) {
+                this.toolSelected = new OvalTool(this.drawingLayer);
+            }
             //Log.d("Tool Selected_2",this.toolItemSelected.name);
             //Log.d("Tools_","4");
             //Log.d("Tools_",this.toolSelected.getName());

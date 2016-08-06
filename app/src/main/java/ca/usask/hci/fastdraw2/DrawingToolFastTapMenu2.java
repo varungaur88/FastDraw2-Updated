@@ -15,9 +15,9 @@ public class DrawingToolFastTapMenu2 extends FastTapMenu {
     /*Commented by Varun
     private Tool toolSelected;
     private int colorSelected;*/
-    private String flag;
     private float strokeSelected;
     private Tool toolSelected;
+    public boolean flag = false;
 
 
     public DrawingToolFastTapMenu2(Context context, DrawingView drawingView, DrawingLayer drawingLayer) {
@@ -60,6 +60,10 @@ public class DrawingToolFastTapMenu2 extends FastTapMenu {
 
     public float getStrokeSelected() {
         return strokeSelected;
+    }
+    public boolean getFlag()
+    {
+        return flag;
     }
     /*Commented by Varun
     public void setColorSelected(int colorSelected) {
@@ -150,7 +154,10 @@ public class DrawingToolFastTapMenu2 extends FastTapMenu {
                 this.strokeSelected = 16f;
             } else if (ti == ToolItem.Wide) {
                 this.strokeSelected = 50f;
-            } else {
+            }else if (ti == ToolItem.Image1) {
+                this.flag = true;
+            }
+            else {
                 this.strokeSelected = 6f;
             }
         }

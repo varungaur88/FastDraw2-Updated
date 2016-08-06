@@ -4,15 +4,12 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
-import android.util.Log;
 
-import java.util.Arrays;
-
-public class CircleTool extends Tool {
+public class Image1 extends Tool {
 
     Paint paint;
 
-    public CircleTool(DrawingLayer drawingLayer) {
+    public Image1(DrawingLayer drawingLayer) {
         super(drawingLayer);
         this.name = "Circle";
         paint = new Paint();
