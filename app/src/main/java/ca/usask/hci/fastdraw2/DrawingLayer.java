@@ -10,7 +10,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnLayoutChangeListener;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -26,6 +28,7 @@ public class DrawingLayer implements OnLayoutChangeListener, TouchEventHandler, 
     /*Start-Added by Varun*/
     private DrawingToolFastTapMenu1 fastTapMenu1;
     private DrawingToolFastTapMenu2 fastTapMenu2;
+    private Tool tempTool;
     /*End*/
 
     protected HashMap<Integer, TouchEventHandler> pointerOwners; // so fast tap menu can grab pointer focus
@@ -51,11 +54,25 @@ public class DrawingLayer implements OnLayoutChangeListener, TouchEventHandler, 
         /*End*/
         this.pointerOwners = new HashMap<Integer, TouchEventHandler>();
         this.toolDownTimestamps = new HashMap<Integer, Long>();
+
+        if(DrawingToolFastTapMenu2.flag==false) {
+            tempTool = fastTapMenu1.getToolSelected();
+        }
+        else if(DrawingToolFastTapMenu2.flag==true){
+            tempTool = fastTapMenu2.getToolSelected();
+        }
     }
 
     public Tool getCurrentTool() {
         /*Modified by Varun*/
-        return fastTapMenu1.getToolSelected();
+//        Log.d("Flag ",String.valueOf(DrawingToolFastTapMenu2.flag));
+        if(DrawingToolFastTapMenu2.flag==false) {
+            tempTool = fastTapMenu1.getToolSelected();
+        }
+        else if(DrawingToolFastTapMenu2.flag==true){
+            tempTool = fastTapMenu2.getToolSelected();
+        }
+        return tempTool;
     }
 
     public float getCurrentStrokeWidth() {
@@ -73,23 +90,40 @@ public class DrawingLayer implements OnLayoutChangeListener, TouchEventHandler, 
 
     @Override
     public void update(Observable observable, Object data) {
-        String id = (String)data;
-        if (id == "Undo") {
-            StudyLogger.getInstance().createLogEvent("event.command")
-                    .attr("name", "Undo")
-                    .commit();
-            popUndo();
-        } else { // All other selections change the menu state
+        String id = (String) data;
+        if (DrawingToolFastTapMenu2.flag == false) {
+            if (id == "Undo") {
+                StudyLogger.getInstance().createLogEvent("event.command")
+                        .attr("name", "Undo")
+                        .commit();
+                popUndo();
+            } else { // All other selections change the menu state
             /*Start-Modified by Varun*/
-            StudyLogger.getInstance().createLogEvent("event.menuupdate")
-                    .attr("curtool", fastTapMenu1.getToolItemSelected().name)
-                    .attr("curcolor", fastTapMenu.getColorItemSelected().name)
-                    .attr("curstroke", fastTapMenu2.getStrokeItemSelected().name)
-                    .commit();
+                StudyLogger.getInstance().createLogEvent("event.menuupdate")
+                        .attr("curtool", fastTapMenu1.getToolItemSelected().name)
+                        .attr("curcolor", fastTapMenu.getColorItemSelected().name)
+                        .attr("curstroke", fastTapMenu2.getStrokeItemSelected().name)
+                        .commit();
             /*End*/
+            }
+        }else if (DrawingToolFastTapMenu2.flag==true) {
+            if (id == "Undo") {
+                StudyLogger.getInstance().createLogEvent("event.command")
+                        .attr("name", "Undo")
+                        .commit();
+                popUndo();
+            } else { // All other selections change the menu state
+            /*Start-Modified by Varun*/
+                StudyLogger.getInstance().createLogEvent("event.menuupdate")
+                        .attr("curtool", tempTool.name)
+                        .attr("curcolor", fastTapMenu.getColorItemSelected().name)
+                        .attr("curstroke", fastTapMenu2.getStrokeItemSelected().name)
+                        .commit();
+            /*End*/
+            }
         }
     }
-
+    //                    .attr("curtool", fastTapMenu1.getToolItemSelected().name)
     public void pushUndo() {
         undoStack.push(canvasBitmap.copy(canvasBitmap.getConfig(), true));
     }

@@ -22,6 +22,7 @@ public class ToolItem {
 	public static final ToolItem Hexagon = new ToolItem("Hexagon", R.drawable.hexagon);
 	public static final ToolItem Oval = new ToolItem("Oval", R.drawable.oval);
 	public static final ToolItem Heart = new ToolItem("Heart", R.drawable.heart);
+	public static final ToolItem Eraser = new ToolItem("Eraser", R.drawable.eraser);
 	
 	public static final ToolItem Black = new ToolItem("Black", R.drawable.black);
 	public static final ToolItem Red = new ToolItem("Red", R.drawable.red);
@@ -98,7 +99,7 @@ public class ToolItem {
 			Thin,
 			Fine,
 			Medium,
-			Wide,
+			Eraser,
 			Undo};
 	/*End*/
 	public static ToolItem numberToAll[][] = {all,all1,all2};
@@ -107,7 +108,7 @@ public class ToolItem {
             Thin,
             Medium,
             Wide,
-			Image1};
+			Eraser};
 
     public static ToolItem[] toolTypes = {Paintbrush,
             Line,

@@ -98,6 +98,7 @@ public class DrawingToolFastTapMenu1 extends FastTapMenu {
     protected void selectByToolItem(ToolItem ti) {
         Log.d("Tools_","3");
 //        Log.d("Tools_",ti.toString());
+        DrawingToolFastTapMenu2.flag=false;
         if (Arrays.asList(ToolItem.toolTypes).contains(ti) ) {
             this.toolItemSelected = ti;
 //            Log.d("Tool Selected_1",this.toolItemSelected.name);
@@ -214,7 +215,11 @@ public class DrawingToolFastTapMenu1 extends FastTapMenu {
 
         public void draw(Canvas canvas) {
             mPaint.setColor(0xff000000);
-            canvas.drawText(menu.getToolItemSelected().name, x + width/2f, y + 2*height/4f, mLabelPaint);
+            if(DrawingToolFastTapMenu2.flag==false) {
+                canvas.drawText(menu.getToolItemSelected().name, x + width / 2f, y + 2 * height / 4f, mLabelPaint);
+            }else if (DrawingToolFastTapMenu2.flag==true) {
+                canvas.drawText("None", x + width / 2f, y + 2 * height / 4f, mLabelPaint);
+            }
             /*Commented by Varun
             canvas.drawText(menu.getColorItemSelected().name, x + width/2f, y + 2*height/4f, mLabelPaint);
             canvas.drawText(menu.getStrokeItemSelected().name, x + width/2f, y + 3*height/4f, mLabelPaint);*/

@@ -17,8 +17,8 @@ public class DrawingToolFastTapMenu2 extends FastTapMenu {
     private int colorSelected;*/
     private float strokeSelected;
     private Tool toolSelected;
-    public boolean flag = false;
-
+    public static boolean flag = false;
+    public String tempName;
 
     public DrawingToolFastTapMenu2(Context context, DrawingView drawingView, DrawingLayer drawingLayer) {
         super(context, drawingView, drawingLayer);
@@ -34,7 +34,6 @@ public class DrawingToolFastTapMenu2 extends FastTapMenu {
         menuItems[12] = null;
         menuItems[13] = null;
         menuItems[14] = this.menuButton;
-
         resetSelections();
     }
     /*Commented by Varun
@@ -49,11 +48,11 @@ public class DrawingToolFastTapMenu2 extends FastTapMenu {
     public ToolItem getStrokeItemSelected() {
         return strokeItemSelected;
     }
-    /*Commented by Varun
+
     public Tool getToolSelected() {
         return toolSelected;
     }
-
+    /* Commented by Varun
     public int getColorSelected() {
         return colorSelected;
     }*/
@@ -64,6 +63,9 @@ public class DrawingToolFastTapMenu2 extends FastTapMenu {
     public boolean getFlag()
     {
         return flag;
+    }
+    public void setFlag(boolean temp){
+        this.flag = temp;
     }
     /*Commented by Varun
     public void setColorSelected(int colorSelected) {
@@ -144,18 +146,25 @@ public class DrawingToolFastTapMenu2 extends FastTapMenu {
 
         } else*/
         if (Arrays.asList(ToolItem.strokeTypes).contains(ti)) {
-            this.strokeItemSelected = ti;
+//            this.strokeItemSelected = ti;
 
             if (ti == ToolItem.Fine) {
                 this.strokeSelected = 1f;
+                this.strokeItemSelected = ToolItem.Fine;
             } else if (ti == ToolItem.Thin) {
                 this.strokeSelected = 6f;
+                this.strokeItemSelected = ToolItem.Thin;
             } else if (ti == ToolItem.Medium) {
                 this.strokeSelected = 16f;
+                this.strokeItemSelected = ToolItem.Medium;
             } else if (ti == ToolItem.Wide) {
                 this.strokeSelected = 50f;
-            }else if (ti == ToolItem.Image1) {
+                this.strokeItemSelected = ToolItem.Wide;
+            }
+            else if (ti == ToolItem.Eraser) {
                 this.flag = true;
+                this.toolSelected = new EraserTool(this.drawingLayer);
+                tempName = ToolItem.Eraser.name;
             }
             else {
                 this.strokeSelected = 6f;
@@ -193,7 +202,11 @@ public class DrawingToolFastTapMenu2 extends FastTapMenu {
             /*Commented by Varun
             canvas.drawText(menu.getToolItemSelected().name, x + width/2f, y + height/4f, mLabelPaint);
             canvas.drawText(menu.getColorItemSelected().name, x + width/2f, y + 2*height/4f, mLabelPaint);*/
-            canvas.drawText(menu.getStrokeItemSelected().name, x + width / 2f, y + 2 * height / 4f, mLabelPaint);
+            if(DrawingToolFastTapMenu2.flag==false) {
+                canvas.drawText(menu.getStrokeItemSelected().name, x + width / 2f, y + 2 * height / 4f, mLabelPaint);
+            }else if (DrawingToolFastTapMenu2.flag==true) {
+                canvas.drawText(tempName, x + width / 2f, y + 2 * height / 4f, mLabelPaint);
+            }
         }
 
     }
