@@ -6,13 +6,13 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
 
-public class EraserTool extends Tool {
+public class FineEraserTool extends Tool {
 
     Paint paint;
 
-    public EraserTool(DrawingLayer drawingLayer) {
+    public FineEraserTool(DrawingLayer drawingLayer) {
         super(drawingLayer);
-        this.name = "Eraser";
+        this.name = "Fine Eraser";
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setDither(true);
@@ -24,7 +24,7 @@ public class EraserTool extends Tool {
     @Override
     protected void getReady() {
         paint.setColor(Color.WHITE);
-        paint.setStrokeWidth(this.drawingLayer.getCurrentStrokeWidth());
+        paint.setStrokeWidth(1f);
     }
 
     @Override

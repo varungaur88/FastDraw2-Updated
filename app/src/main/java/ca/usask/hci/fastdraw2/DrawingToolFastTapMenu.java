@@ -85,7 +85,7 @@ public class DrawingToolFastTapMenu extends FastTapMenu {
         } else if (this.colorSelected == 0xff964b00) {
             this.colorItemSelected = ToolItem.Brown;
         } else if (this.colorSelected == 0xff563c5c) {
-            this.colorItemSelected = ToolItem.Voilet;
+            this.colorItemSelected = ToolItem.Violet;
         } else if (this.colorSelected == 0xff808080) {
             this.colorItemSelected = ToolItem.Gray;
         }
@@ -149,7 +149,7 @@ public class DrawingToolFastTapMenu extends FastTapMenu {
             else if (ti == ToolItem.Brown) {
                 this.colorSelected = 0xff964b00;
             }
-            else if (ti == ToolItem.Voilet) {
+            else if (ti == ToolItem.Violet) {
                 this.colorSelected = 0xff563c5c;
             }
             else if (ti == ToolItem.Gray) {

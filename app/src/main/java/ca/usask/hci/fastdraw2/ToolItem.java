@@ -22,7 +22,13 @@ public class ToolItem {
 	public static final ToolItem Hexagon = new ToolItem("Hexagon", R.drawable.hexagon);
 	public static final ToolItem Oval = new ToolItem("Oval", R.drawable.oval);
 	public static final ToolItem Heart = new ToolItem("Heart", R.drawable.heart);
-	public static final ToolItem Eraser = new ToolItem("Eraser", R.drawable.eraser);
+	public static final ToolItem WideEraser = new ToolItem("Wide Eraser", R.drawable.wideeraser);
+	public static final ToolItem MediumEraser = new ToolItem("Medium Eraser", R.drawable.mediumeraser);
+	public static final ToolItem ThinEraser = new ToolItem("Thin Eraser", R.drawable.thineraser);
+	public static final ToolItem FineEraser = new ToolItem("Fine Eraser", R.drawable.fineeraser);
+	public static final ToolItem Square = new ToolItem("Square", R.drawable.square);
+	public static final ToolItem SadSmiley = new ToolItem("Sad Smiley", R.drawable.sadsmiley);
+	public static final ToolItem HappySmiley = new ToolItem("Happy Smiley", R.drawable.happysmiley);
 	
 	public static final ToolItem Black = new ToolItem("Black", R.drawable.black);
 	public static final ToolItem Red = new ToolItem("Red", R.drawable.red);
@@ -36,7 +42,7 @@ public class ToolItem {
 	public static final ToolItem Magenta = new ToolItem("Magenta", R.drawable.magenta);
 	public static final ToolItem Orange = new ToolItem("Orange", R.drawable.orange);
 	public static final ToolItem Brown = new ToolItem("Brown", R.drawable.brown);
-	public static final ToolItem Voilet = new ToolItem("Voilet", R.drawable.voilet);
+	public static final ToolItem Violet = new ToolItem("Violet", R.drawable.voilet);
 	public static final ToolItem Gray = new ToolItem("Gray", R.drawable.gray);
 	public static final ToolItem CustomColor = new ToolItem("Custom Color", R.drawable.customcolor);
 		
@@ -75,13 +81,13 @@ public class ToolItem {
 			Magenta,
 			Orange,
 			Brown,
-			Voilet,
+			Violet,
 			Gray};
 	public static ToolItem[] all1 = {Paintbrush,
 			Line,
 			Circle,
 			Rectangle,
-			Fill,
+			Square,
 			Pentagon,
 			Triangle,
 			Star,
@@ -93,13 +99,13 @@ public class ToolItem {
 			Thin,
 			Medium,
 			Wide,
-			Medium,
-			Fine,
-			Medium,
-			Thin,
-			Fine,
-			Medium,
-			Eraser,
+			FineEraser,
+			ThinEraser,
+			MediumEraser,
+			WideEraser,
+			HappySmiley,
+			SadSmiley,
+			Fill,
 			Undo};
 	/*End*/
 	public static ToolItem numberToAll[][] = {all,all1,all2};
@@ -108,14 +114,20 @@ public class ToolItem {
             Thin,
             Medium,
             Wide,
-			Eraser};
+			FineEraser,
+			ThinEraser,
+			WideEraser,
+			MediumEraser,
+			Fill,
+			HappySmiley,
+			SadSmiley};
 
     public static ToolItem[] toolTypes = {Paintbrush,
             Line,
             Circle,
             Rectangle,
-            Fill,
             ColorPicker,
+			Square,
             CustomColor,
 			Triangle,
 			Pentagon,
@@ -135,7 +147,7 @@ public class ToolItem {
             Magenta,
 			Orange,
 			Brown,
-			Voilet,
+			Violet,
 			Gray};
 
     public static ToolItem[] actionTypes = {Undo};

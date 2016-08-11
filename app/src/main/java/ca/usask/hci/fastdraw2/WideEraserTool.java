@@ -1,35 +1,34 @@
 package ca.usask.hci.fastdraw2;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
 
-public class Image1 extends Tool {
+public class WideEraserTool extends Tool {
 
     Paint paint;
 
-    public Image1(DrawingLayer drawingLayer) {
+    public WideEraserTool(DrawingLayer drawingLayer) {
         super(drawingLayer);
-        this.name = "Circle";
+        this.name = "Wide Eraser";
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setDither(true);
         paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
     }
 
     @Override
     protected void getReady() {
-        paint.setColor(this.drawingLayer.getCurrentColor());
-        paint.setStrokeWidth(this.drawingLayer.getCurrentStrokeWidth());
+        paint.setColor(Color.WHITE);
+        paint.setStrokeWidth(50f);
     }
 
     @Override
     protected void drawPointer(int id, PointF start, PointF end, Path path, Canvas canvas) {
-        float cx, cy, r;
-        cx = (start.x + end.x)/2;
-        cy = (start.y + end.y)/2;
-        r = GeometryUtils.dist(start.x, start.y, cx, cy);
-        canvas.drawCircle(cx, cy, r, paint);
+        canvas.drawPath(this.pathsById.get(id), paint);
     }
 }

@@ -110,8 +110,6 @@ public class DrawingToolFastTapMenu1 extends FastTapMenu {
                 this.toolSelected = new RectangleTool(this.drawingLayer);
             } else if (ti == ToolItem.Circle) {
                 this.toolSelected = new CircleTool(this.drawingLayer);
-            } else if (ti == ToolItem.Fill) {
-                this.toolSelected = new BucketTool(this.drawingLayer);
             } else if (ti == ToolItem.ColorPicker) {
                 this.toolSelected = new ColorPickerTool(this.drawingLayer);
             } else if (ti == ToolItem.CustomColor) {
@@ -137,6 +135,9 @@ public class DrawingToolFastTapMenu1 extends FastTapMenu {
             }
             else if (ti == ToolItem.Heart) {
                 this.toolSelected = new HeartTool(this.drawingLayer);
+            }
+            else if (ti == ToolItem.Square) {
+                this.toolSelected = new SquareTool(this.drawingLayer);
             }
             //Log.d("Tool Selected_2",this.toolItemSelected.name);
             //Log.d("Tools_","4");

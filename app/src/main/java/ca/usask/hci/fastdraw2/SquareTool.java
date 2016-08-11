@@ -4,15 +4,14 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
-import android.graphics.RectF;
 
-public class RectangleTool extends Tool {
+public class SquareTool extends Tool {
 
     Paint paint;
 
-    public RectangleTool(DrawingLayer drawingLayer) {
+    public SquareTool(DrawingLayer drawingLayer) {
         super(drawingLayer);
-        this.name = "Rectangle";
+        this.name = "Square";
         paint = new Paint();
         paint.setAntiAlias(true);
         paint.setDither(true);
@@ -29,7 +28,7 @@ public class RectangleTool extends Tool {
 
     @Override
     protected void drawPointer(int id, PointF start, PointF end, Path path, Canvas canvas) {
-        float left, right, top, bottom;
+        float left, right, top, bottom,check=1;
         if (end.x > start.x) {
             left = start.x;
             right = end.x;
@@ -37,13 +36,15 @@ public class RectangleTool extends Tool {
             left = end.x;
             right = start.x;
         }
+        top = start.y;
+
         if (end.y > start.y) {
-            top = start.y;
-            bottom = end.y;
+
         } else {
-            top = end.y;
-            bottom = start.y;
+            check = -1;
         }
-        canvas.drawRect(left, top, right, bottom, paint);
+
+        float radius = right - left;
+        canvas.drawRect(left, top, left + radius, top +  check*radius, paint);
     }
 }

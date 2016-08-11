@@ -37,15 +37,6 @@ public class TriangleTool extends Tool {
         path1.lineTo(points1[4],points1[5]);
         path1.lineTo(points1[4],points1[5]);
         path1.close();
-
-
-
-
-
-
-
         canvas.drawPath(path1,paint);
-
-
     }
 }

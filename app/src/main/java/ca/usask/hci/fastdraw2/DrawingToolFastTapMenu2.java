@@ -161,10 +161,40 @@ public class DrawingToolFastTapMenu2 extends FastTapMenu {
                 this.strokeSelected = 50f;
                 this.strokeItemSelected = ToolItem.Wide;
             }
-            else if (ti == ToolItem.Eraser) {
+            else if (ti == ToolItem.Fill) {
                 this.flag = true;
-                this.toolSelected = new EraserTool(this.drawingLayer);
-                tempName = ToolItem.Eraser.name;
+                this.toolSelected = new BucketTool(this.drawingLayer);
+                tempName = ToolItem.Fill.name;
+            }
+            else if (ti == ToolItem.FineEraser) {
+                this.flag = true;
+                this.toolSelected = new FineEraserTool(this.drawingLayer);
+                tempName = ToolItem.FineEraser.name;
+            }
+            else if (ti == ToolItem.ThinEraser) {
+                this.flag = true;
+                this.toolSelected = new ThinEraserTool(this.drawingLayer);
+                tempName = ToolItem.ThinEraser.name;
+            }
+            else if (ti == ToolItem.MediumEraser) {
+                this.flag = true;
+                this.toolSelected = new MediumEraserTool(this.drawingLayer);
+                tempName = ToolItem.MediumEraser.name;
+            }
+            else if (ti == ToolItem.WideEraser) {
+                this.flag = true;
+                this.toolSelected = new WideEraserTool(this.drawingLayer);
+                tempName = ToolItem.WideEraser.name;
+            }
+            else if (ti == ToolItem.HappySmiley) {
+                this.flag = true;
+                this.toolSelected = new HappySmileyTool(this.drawingLayer);
+                tempName = ToolItem.HappySmiley.name;
+            }
+            else if (ti == ToolItem.SadSmiley) {
+                this.flag = true;
+                this.toolSelected = new SadSmileyTool(this.drawingLayer);
+                tempName = ToolItem.SadSmiley.name;
             }
             else {
                 this.strokeSelected = 6f;
