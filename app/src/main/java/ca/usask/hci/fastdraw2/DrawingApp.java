@@ -57,7 +57,7 @@ public class DrawingApp extends Application {
 
         Intent intent = new Intent(Intent.ACTION_SEND_MULTIPLE);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"ben.lafreniere@usask.ca"});
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"varun.gaur@usask.ca"});
         intent.putExtra(Intent.EXTRA_SUBJECT, "FastDraw log " + sd.getName());
 
         intent.putExtra(Intent.EXTRA_TEXT, "Drawing and log files are attached.");
